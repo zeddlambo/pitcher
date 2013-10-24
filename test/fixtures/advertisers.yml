@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  security: MyString
+  cid: 1
+  issue: MyString
+  points: 1
+
+two:
+  name: MyString
+  security: MyString
+  cid: 1
+  issue: MyString
+  points: 1

@@ -1,0 +1,43 @@
+
+
+<p id="notice"><%= notice %></p>
+<div class = "panel panel-default">
+  <div class = "panel-heading">
+    <h1>Case Card: <%= @advertiser.cid %></h1>
+  </div>
+  <div class = "panel-body">
+    <div class = "form-group">
+  <SPAN ID="copytext"> 
+      <p>
+        <strong>Name:</strong>
+        <%= @advertiser.name %>
+      </p>
+
+      <p>
+        <strong>Security:</strong>
+        <%= @advertiser.security %>
+      </p>
+
+      <p>
+        <strong>Cid:</strong>
+        <%= @advertiser.cid %>
+      </p>
+
+      <p>
+        <strong>Issue:</strong>
+        <%= @advertiser.issue %>
+      </p>
+
+      <p>
+        <strong>Pitch:</strong>
+        <%= @advertiser.points %>
+      </p>
+
+      <p>Follow Up Required:</p>
+    </SPAN>
+  </div></div>
+  <div class = "panel-footer">
+    <%= link_to 'Edit', edit_advertiser_path(@advertiser) %> |
+    <%= link_to 'Back to Cases', advertisers_path %>
+  </div></div>
+

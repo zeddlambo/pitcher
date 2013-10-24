@@ -1,0 +1,27 @@
+<div class = "panel panel-default">
+	<div class = "panel-heading">
+		<h1>About Pitchzilla</h1>
+	</div>
+	<div class = "panel-body">
+		<div class = "form-group">
+			<p>Pitchzilla is a simple pitch tracking application that makes it easy for you as an Adwords Online specialist to record, track, and analyze your interactions with Advertisers. If you have any feedback please feel free to email--> <strong><%= link_to "ZAC@GOOGLE.COM", mailto: "zac@google.com" %></strong></p></br>
+			<CENTER>
+				<FORM METHOD=POST ACTION="mailto:zac@google.com" ENCTYPE="text/plain">
+				<INPUT TYPE="text" NAME="username", class= "form-control", placeholder = "Name" > <BR>
+				<INPUT TYPE="text" NAME="email", class= "form-control", placeholder = "Email"><BR>
+				<BR>
+				<p align="left">Comments:</p>
+				<TEXTAREA NAME="COMMENTS" ROWS = 5, class = "form-control">
+				</TEXTAREA>
+				<INPUT NAME="redirect" TYPE="hidden" VALUE="../about">
+				<INPUT NAME="NEXT_URL" TYPE="hidden" VALUE="../about">
+				<BR>
+			</CENTER>
+		</div></div>
+		<div class = "panel-footer">
+			<INPUT TYPE="submit" VALUE="Send", class = "btn btn-success btn-lg">
+			<INPUT TYPE="reset" VALUE="Clear", class = "btn btn-default btn-lg">
+			</FORM>
+		</div>
+		<!-- END OF FORM -->
+</div>

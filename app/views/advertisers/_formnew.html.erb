@@ -1,0 +1,35 @@
+<%= form_for(@advertiser) do |f| %>
+  <% if @advertiser.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@advertiser.errors.count, "error") %> prohibited this advertiser from being saved:</h2>
+
+      <ul>
+      <% @advertiser.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class ="field">
+    <%= f.text_field :name, class: "form-control", placeholder: "Name"%></br></div>
+    <div class = "row">
+  <div class "field">
+    <div class = "col-xs-12 col-md-4">
+    <%= f.text_field :security, class: "form-control", placeholder: "Security Checked?" %></br>
+  </div></div>
+  <div class="col-xs-12 col-md-4">
+    <div class = "field">
+    <%= f.number_field :cid, class: "form-control", placeholder: "CID Number"%></br>
+  </div></div>
+  <div class = "col-xs-12 col-md-4">
+  <div class="field">
+    <%= f.number_field :points, class: "form-control", placeholder: "How many points?" %></br>
+  </div></div></div>
+      <div class="textarea">
+        <%= f.text_area :issue, class: "form-control",rows:4, placeholder: "User Issues..." %><br>
+    </div>
+  <div class="actions">
+    <%= f.submit "+ Case", class: "btn btn-success btn-lg" %>
+  </div>
+<% end %>
