@@ -1,6 +1,8 @@
 class AdvertisersController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  
   before_action :set_advertiser, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
 
 
   # GET /advertisers

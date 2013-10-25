@@ -1,4 +1,5 @@
-<% if user_signed_in? %>  
+<% if user_signed_in? %> 
+<% if advertiser.user.id == current_user %>
   <div class = "panel panel-default">
       <div class = "panel-heading">
         <h1>Listing Cases:</h1>
@@ -47,7 +48,7 @@
               <td class="col-md-1"><%= link_to 'Case Card', advertiser, class: "btn btn-warning" %></td>
               <td class="col-md-1"><%= link_to 'Delete', advertiser, method: :delete, data: { confirm: 'Are you sure you want to delete this case from your records?' }, class: "btn btn-danger" %></td>
             </tr>
-            <% end %>
+            <% end %><% end %>
         </tbody>
       </table>
     </div>

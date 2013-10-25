@@ -1,37 +1,39 @@
-<div class = "panel panel-default">
-  <div class = "panel-heading">
-    <h1>Listing Cases</h1>
-  </div>
-  <div class ="panel-body">
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Security</th>
-      <th>CID</th>
-      <th>Issue</th>
-      <th>Points<th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pins.each do |pin| %>
+<% if advertiser.user == current_user%>
+  <div class = "panel panel-default">
+    <div class = "panel-heading">
+      <h1>Listing Cases</h1>
+    </div>
+    <div class ="panel-body">
+  <table class="table">
+    <thead>
       <tr>
-        <td><strong><%= pin.description %></strong></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="col-md-2"><%= link_to 'View', pin, class: "btn btn-default" %></td>
-        <td class="col-md-2"><%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-warning" %></td>
-        <td class="col-md-2"><%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        <th>Name</th>
+        <th>Security</th>
+        <th>CID</th>
+        <th>Issue</th>
+        <th>Points<th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-</div>
-<div class = "panel-footer">
-  <%= link_to 'New Pin', new_pin_path, class: "btn btn-success btn-lg" %>
-</div>
-</div>
+    <tbody>
+      <% @pins.each do |pin| %>
+        <tr>
+          <td><strong><%= pin.description %></strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="col-md-2"><%= link_to 'View', pin, class: "btn btn-default" %></td>
+          <td class="col-md-2"><%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-warning" %></td>
+          <td class="col-md-2"><%= link_to 'Delete', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <br>
+  </div>
+  <div class = "panel-footer">
+    <%= link_to 'New Pin', new_pin_path, class: "btn btn-success btn-lg" %>
+  </div>
+  </div>
+<% end %>
