@@ -68,11 +68,11 @@ class AdvertisersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_advertiser
-      @advertiser = current_user.advertisers.build(params[:id])
+      @advertiser = Advertiser.find(params[:id])
     end
 
     def correct_user
-      @advertiser = Advertiser.find_by(id: params[:id])
+      @advertiser = current_user.advertisers.find_by(id: params[:id])
       redirect_to advertisers_path, notice: "Not authorized to edit this pin" if @advertiser.nil?
     end
 
