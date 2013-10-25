@@ -33,15 +33,15 @@
               <td><%= advertiser.cid %></td>
               <td><%= advertiser.issue %></td>
               <td>
-                <% if "advertiser.points < ?", 12 %>
+                <% if advertiser.points < 12 %>
                   <span class="label label-danger">
                     <%= advertiser.points %></span>
                   </td>
                 <% else %>
                   <span class="label label-success">
                     <%= advertiser.points %></span>
-                  </td>
                 <% end %>
+                </td>
               <td class="col-md-1"><%= link_to 'Case Card', advertiser, class: "btn btn-warning" %></td>
               <td class="col-md-1"><%= link_to 'Delete', advertiser, method: :delete, data: { confirm: 'Are you sure you want to delete this case from your records?' }, class: "btn btn-danger" %></td>
             </tr>
