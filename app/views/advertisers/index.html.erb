@@ -33,12 +33,12 @@
               <td><%= advertiser.cid %></td>
               <td><%= advertiser.issue %></td>
               <td>
-                <% if (advertiser.points > 11) %>
-                  <span class="label label-success">
+                <% if (advertiser.points<12) %>
+                  <span class="label label-danger">
                     <%= advertiser.points %></span>
                   </td>
                 <% else %>
-                  <span class="label label-danger">
+                  <span class="label label-success">
                     <%= advertiser.points %></span>
                   </td>
                 <% end %>
