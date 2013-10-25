@@ -1,7 +1,6 @@
 class AdvertisersController < ApplicationController
   
   before_action :set_advertiser, only: [:show, :edit, :update, :destroy]
-  before_action :correct_user, only: [:index]
   before_action :authenticate_user!, except: [:index, :show]
 
 
@@ -18,7 +17,7 @@ class AdvertisersController < ApplicationController
 
   # GET /advertisers/new
   def new
-    @advertiser = Advertiser.new
+    @advertiser = current_user.advertisers.build
   end
 
 
@@ -29,7 +28,7 @@ class AdvertisersController < ApplicationController
   # POST /advertisers
   # POST /advertisers.json
   def create
-    @advertiser = Advertiser.new(advertiser_params)
+    @advertiser = current_user.advertisers.build(advertiser_params)
 
     respond_to do |format|
       if @advertiser.save
@@ -69,12 +68,12 @@ class AdvertisersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_advertiser
-      @advertiser = Advertiser.find(params[:id])
+      @advertiser = current_user.advertisers.build(params[:id])
     end
 
     def correct_user
       @advertiser = Advertiser.find_by(id: params[:id])
-      redirect_to advertisers_path, notice: "Not authorized to edit this pin" if @advertise.nil?
+      redirect_to advertisers_path, notice: "Not authorized to edit this pin" if @advertiser.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
