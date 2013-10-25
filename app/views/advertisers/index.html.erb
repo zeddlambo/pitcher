@@ -18,7 +18,7 @@
             </tr>
           </thead>
         <tbody>
-          <% @advertisers.each do |advertiser| %><% if advertiser.user == current_user %>
+          <% @advertisers.each do |advertiser| %>
             <tr>
               <td><%= advertiser.name %></td>
               <td><%= advertiser.security %></td>
@@ -27,7 +27,7 @@
               <td><%= advertiser.points %></td>
               <td class="col-md-1"><%= link_to 'View Case Card', advertiser, class: "btn btn-warning" %></td>
               <td class="col-md-1"><%= link_to 'Delete', advertiser, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-            </tr><% end %>
+            </tr>
             <% end %>
         </tbody>
       </table>
