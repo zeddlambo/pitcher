@@ -1,5 +1,4 @@
-<% if advertiser.user == current_user %>
-  <% if user_signed_in? %> 
+  <% if user_signed_in? %>
     <div class = "panel panel-default">
         <div class = "panel-heading">
           <h1>Listing Cases:</h1>
@@ -62,5 +61,4 @@
          <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
       </p>    
-  <% end %>
 <% end %>
