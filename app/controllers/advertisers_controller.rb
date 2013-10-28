@@ -74,11 +74,11 @@ class AdvertisersController < ApplicationController
 
     def correct_user
       @advertiser = current_user.advertisers.find_by(id: params[:id])
-      redirect_to advertisers_path, notice: "Not authorized to edit this pin" if @advertiser.nil?
+      redirect_to advertisers_path, notice: "That action is not allowed" if @advertiser.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def advertiser_params
-      params.require(:advertiser).permit(:name, :security, :cid, :issue, :points)
+      params.require(:advertiser).permit(:name, :security, :cid, :issue, :points, :notes)
     end
 end

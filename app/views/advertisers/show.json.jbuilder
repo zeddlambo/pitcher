@@ -1,1 +1,1 @@
-json.extract! @advertiser, :name, :security, :cid, :issue, :points, :created_at, :updated_at
+json.extract! @advertiser, :name, :security, :cid, :issue, :points, :notes, :created_at, :updated_at
