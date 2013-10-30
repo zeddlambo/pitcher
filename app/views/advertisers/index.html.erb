@@ -29,7 +29,7 @@
             <% if advertiser.user == current_user %>
               <tr>
                 <td><%= advertiser.name %></td>
-                <td><% if (advertiser.security == 'yes' || 'Yes') %>
+                <td><% if (advertiser.security == "yes") %>
                       <span class="label label-success">
                         <%= advertiser.security %></span>
                       </td>
