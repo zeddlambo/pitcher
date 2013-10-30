@@ -9,6 +9,10 @@ class AdvertisersController < ApplicationController
   # GET /advertisers.json
   def index
     @advertisers = Advertiser.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @advertisers.to_csv }
+    end
   end
 
   # GET /advertisers/1
@@ -79,6 +83,6 @@ class AdvertisersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def advertiser_params
-      params.require(:advertiser).permit(:name, :security, :cid, :issue, :points, :calltime, :notes)
+      params.require(:advertiser).permit(:name, :security, :cid, :issue, :points)
     end
 end
