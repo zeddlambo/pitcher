@@ -9,4 +9,8 @@ class Advertiser < ActiveRecord::Base
 			end
 		end
 	end
+
+	#def average
+	#	for (i = 0, i+=1, i<advertisers.length)
+
 end
