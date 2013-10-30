@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025195036) do
+ActiveRecord::Schema.define(version: 20131028210347) do
 
   create_table "advertisers", force: true do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20131025195036) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "calltime"
   end
 
   add_index "advertisers", ["user_id"], name: "index_advertisers_on_user_id"

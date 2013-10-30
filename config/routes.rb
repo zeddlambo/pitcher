@@ -1,10 +1,6 @@
 Pinteresting::Application.routes.draw do
   resources :advertisers
 
-  resources :cases
-
-  resources :pins
-
   devise_for :users
   
   root "advertisers#index"
