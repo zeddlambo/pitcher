@@ -8,7 +8,7 @@ class AdvertisersController < ApplicationController
   # GET /advertisers
   # GET /advertisers.json
   def index
-    @advertisers = current_user.advertisers
+    @advertisers = Advertisers.all
     respond_to do |format|
       format.html
       format.csv { send_data @advertisers.to_csv }
