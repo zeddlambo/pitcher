@@ -10,8 +10,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 gem 'devise', '~> 3.1.0.rc2'
-gem 'csv_shaper'
-gem 'protected_attributes'
 
 group :production do
 	gem 'pg'
