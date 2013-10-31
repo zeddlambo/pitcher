@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131031001124) do
+ActiveRecord::Schema.define(version: 20131031151749) do
 
   create_table "advertisers", force: true do |t|
     t.string   "name"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20131031001124) do
 
   create_table "notes", force: true do |t|
     t.string   "title"
-    t.string   "note"
+    t.text     "note",       limit: 255
     t.string   "tag"
     t.datetime "created_at"
     t.datetime "updated_at"
