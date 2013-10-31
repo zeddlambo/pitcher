@@ -9,13 +9,6 @@
           <h1>Listing Cases: <%= x %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'New Case', new_advertiser_path, class: "btn btn-default btn-lg" %>
 </h1>
 </div>
-
-<h2>
-<%= link_to "<", date: @date.prev_month %>
-    <%= @date.strftime("%d") %>
-    <%= link_to ">", date: @date.next_month %>
-  </h2>
-  
         
         <div class ="panel-body">
           <table class="table table-hover">
@@ -31,7 +24,7 @@
               </tr>
             </thead>
           <tbody>
-        <% @advertisers_by_date[date].each do |advertiser| %>
+        <% @advertisers.each do |advertiser| %>
             <% if advertiser.user == current_user %>
               <tr>
                 <td><%= advertiser.name %></td>
