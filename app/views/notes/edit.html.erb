@@ -1,12 +1,12 @@
 <div class="panel panel-default">
 <div class="panel-heading">
-	<h1>Editing pin</h1>
+	<h1>Editing Note: <%= @note.title%></h1>
 </div>
 <div class="panel-body">
 	<%= render 'form' %>
 </div>
 <div class = "panel-footer">
-	<%= link_to 'Show', @pin %> |
-	<%= link_to 'Back', pins_path %>
+	<%= link_to 'Show Note', @note %> |
+<%= link_to 'Back to Notes', notes_path %>
 </div>
 </div>

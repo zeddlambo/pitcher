@@ -1,0 +1,50 @@
+<% if user_signed_in? %>
+  <div class = "panel panel-default">
+        <div class = "panel-heading">
+          <h1>Listing Notes: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'New Note', new_note_path, class: "btn btn-default btn-lg" %>
+</h1>
+</div>
+
+        
+        <div class ="panel-body">
+          <table class="table table-hover">
+            <thead>
+             <tr><strong>
+                <th>Title</th>
+                <th>Description</th>
+                <th></th>
+                 <th></th>
+                 <th></th>
+                 <th></th></strong>
+              </tr>
+            </thead>
+          <tbody>
+            <% @notes.each do |note| %>
+            <% if note.user == current_user %>
+              <tr>
+                <td><%= note.title %></td>
+                <td><%= note.note[0,100] %>...</td>
+                <td></td>
+                <td><%= link_to 'Edit', edit_note_path(note), class: "btn btn-info" %></td>
+                <td><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure you want to delete this note?' }, class: "btn btn-danger" %></td>
+              </tr>
+              <% end %><% end %>
+          </tbody>
+        </table>
+      </div>
+        </br>
+        <div class= "panel-footer">
+          <%= link_to 'New Note', new_note_path, class: "btn btn-info btn-lg" %>
+        </div>
+      </div>
+  <% else %>
+  <div class="jumbotron center">
+       <h1>Sign in to continue...</h1>
+       <p>
+         <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+      </p>    
+<% end %>
+
+  
+

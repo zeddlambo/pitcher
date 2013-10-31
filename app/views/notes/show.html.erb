@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<div class = "panel panel-default">
+  <div class = "panel-heading">
+    <h1><% @note.title %></h1>
+  </div>
+  <div class = "panel-body">
+    <div class = "form-group">
+  <SPAN ID="copytext"> 
+      <p>
+  <strong>Note:</strong>
+  <%= @note.note %>
+</p>
+
+<p>
+  <strong>Tag(s):</strong>
+  <%= @note.tag %>
+</p>
+
+    </SPAN>
+  </div></div>
+  <div class = "panel-footer">
+    <%= link_to 'Edit', edit_note_path(@advertiser) %> |
+    <%= link_to 'Back to Cases', notes_path %>
+  </div></div>
+
+  
