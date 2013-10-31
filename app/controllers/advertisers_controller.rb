@@ -13,6 +13,8 @@ class AdvertisersController < ApplicationController
       format.html
       format.csv { send_data @advertisers.to_csv }
     end
+  @advertisers_by_date = @advertisers.group_by(&:published_on)
+  @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
   # GET /advertisers/1

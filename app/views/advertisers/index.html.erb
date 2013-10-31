@@ -10,6 +10,12 @@
 </h1>
 </div>
 
+<h2>
+<%= link_to "<", date: @date.prev_month %>
+    <%= @date.strftime("%d") %>
+    <%= link_to ">", date: @date.next_month %>
+  </h2>
+  
         
         <div class ="panel-body">
           <table class="table table-hover">
@@ -25,7 +31,7 @@
               </tr>
             </thead>
           <tbody>
-            <% @advertisers.each do |advertiser| %>
+        <% @advertisers_by_date[date].each do |advertiser| %>
             <% if advertiser.user == current_user %>
               <tr>
                 <td><%= advertiser.name %></td>
