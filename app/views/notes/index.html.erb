@@ -22,8 +22,8 @@
             <% @notes.each do |note| %>
             <% if note.user == current_user %>
               <tr>
-                <td><%= note.title %></td>
-                <td><%= note.note[0,100] %>...</td>
+                <td><strong><%= note.title %></strong></td>
+                <td><%= note.note[0,170] %>...</td>
                 <td></td>
                 <td><%= link_to 'Edit', edit_note_path(note), class: "btn btn-info" %></td>
                 <td><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure you want to delete this note?' }, class: "btn btn-danger" %></td>
