@@ -37,7 +37,7 @@ class AdvertisersController < ApplicationController
 
     respond_to do |format|
       if @advertiser.save
-        format.html { redirect_to advertisers_path, notice: 'Case was successfully created.' }
+        format.html { redirect_to @advertiser }
         format.json { render action: 'show', status: :created, location: @advertiser }
       else
         format.html { render action: 'new' }
