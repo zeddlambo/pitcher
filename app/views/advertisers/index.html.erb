@@ -1,12 +1,13 @@
   <% if user_signed_in? %><% x = 0 %>
     <% @advertisers.each do |advertiser| %>
+    <% if advertiser.created_at.today? %>
             <% if advertiser.user == current_user %>
              <% x +=1 %>
-             <% end %><% end %>
+             <% end %><% end %><% end %>
 
     <div class = "panel panel-default">
         <div class = "panel-heading">
-          <h1>Listing Cases: <%= x %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'New Case', new_advertiser_path, class: "btn btn-default btn-lg" %>
+          <h1>Today's Cases: <%= x %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'New Case', new_advertiser_path, class: "btn btn-default btn-lg" %>
 </h1>
 </div>
         
@@ -25,6 +26,7 @@
             </thead>
           <tbody>
         <% @advertisers.each do |advertiser| %>
+        <% if advertiser.created_at.today? %>
             <% if advertiser.user == current_user %>
               <tr>
                 <td><%= advertiser.name %></td>
@@ -60,7 +62,7 @@
                 <td class="col-md-1"><%= link_to 'Case Card', advertiser, class: "btn btn-warning" %></td>
                 <td class="col-md-1"><%= link_to 'Delete', advertiser, method: :delete, data: { confirm: 'Are you sure you want to delete this case from your records?' }, class: "btn btn-danger" %></td>
               </tr>
-              <% end %><% end %>
+              <% end %><% end %><% end %>
           </tbody>
         </table>
       </div>
