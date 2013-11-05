@@ -18,7 +18,7 @@ class AdvertisersController < ApplicationController
   # GET /advertisers/1
   # GET /advertisers/1.json
   def show
-  end 
+  end
 
   # GET /advertisers/new
   def new
