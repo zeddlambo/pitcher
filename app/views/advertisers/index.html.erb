@@ -9,7 +9,6 @@
           <h1>Listing Cases: <%= x %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!--<%= link_to 'New Case', new_advertiser_path, class: "btn btn-default btn-lg" %><%= link_to 'yesterday', "advertisers/yesterday", class: "btn btn-default btn-lg" %>-->
 </h1>
 </div>
-        
         <div class ="panel-body">
           <table class="table table-hover">
             <thead>
@@ -41,15 +40,15 @@
                 <td><%= advertiser.cid %></td>
                 <td><%= advertiser.issue %></td>
                 <td>
-                  <% if (advertiser.points == 5) %>
+                  <% if (advertiser.points < 5) %>
                     <span class = "label label-danger">
                       <%= advertiser.points %></span>
                     </td>
-                    <% elsif (advertiser.points == 12) %>
+                    <% elsif (advertiser.points < 12) %>
                     <span class = "label label-warning">
                       <%= advertiser.points %></span>
                     </td>
-                    <% elsif (advertiser.points == 20) %>
+                    <% elsif (advertiser.points < 20) %>
                     <span class = "label label-info">
                       <%= advertiser.points %></span>
                     </td>

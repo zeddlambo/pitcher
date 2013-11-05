@@ -21,4 +21,8 @@ class Advertiser < ActiveRecord::Base
 		puts @average
 	end
 
+	def yesterday
+		@advertisers = current_user.advertisers.yesterday
+	end
+
 end
