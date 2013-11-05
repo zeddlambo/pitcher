@@ -1,6 +1,6 @@
   <% if user_signed_in? %><% x = 0 %>
     <% @advertisers.each do |advertiser| %>
-    <% if advertiser.created_at.today? %>
+    <% if advertiser.created_at == Time.zone.today %>
             <% if advertiser.user == current_user %>
              <% x +=1 %>
              <% end %><% end %><% end %>
@@ -8,7 +8,7 @@
     <div class = "panel panel-default">
         <div class = "panel-heading">
           <h1>Today's Cases: <%= x %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'New Case', new_advertiser_path, class: "btn btn-default btn-lg" %>
-</h1>
+</h1><p>&nbsp;<a href = "#">Today</a> | <a href = "#">Tomorrow</a> </p>
 </div>
         
         <div class ="panel-body">
