@@ -22,7 +22,6 @@
   </div>
   <div class = "panel-body">
     <div class = "form-group" > 
-      <label for='fe_text'>
         <p>
         <strong>Name:</strong>
         <%= @advertiser.name%>
@@ -48,7 +47,7 @@
         <%= @advertiser.points %>
       </p>
 
-      <p>Follow Up Required:</p></label>
+      <p><strong>Follow Up Required:<% if @advertiser.finished == "yes" puts "no" else puts "yes"%></strong></p>
     </br><!--<button class='btn btn-primary btn-lg' data-clipboard-target='fe_text' data-clipboard-text='Default clipboard text from attribute' id='d_clip_button' title='Copy Phone Note'>
     <b>Copy Phone Note</b>
   </button>-->
