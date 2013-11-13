@@ -4,4 +4,21 @@ class PagesController < ApplicationController
 
   def about
   end
+
+   def weekly_progress
+    @advertisers = current_user.advertisers.by_week
+  end
+
+  def yesterday
+  	@advertisers = current_user.advertisers.yesterday
+  end
+
+  def today
+  	@advertisers = current_user.advertisers.today
+  end
+
+  def this_month
+  	@advertisers = current_user.advertisers.by_month
+  end
+
 end

@@ -20,6 +20,7 @@ class AdvertisersController < ApplicationController
   def show
   end
 
+
   # GET /advertisers/new
   def new
     @advertiser = current_user.advertisers.build
@@ -83,6 +84,6 @@ class AdvertisersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def advertiser_params
-      params.require(:advertiser).permit(:name, :security, :cid, :issue, :points, :created_at)
+      params.require(:advertiser).permit(:name, :security, :cid, :issue, :points, :finished, :created_at)
     end
 end

@@ -1,28 +1,25 @@
-  <script src="http://code.jquery.com/jquery-latest.js"></script>
-  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-
-
-
   <% if user_signed_in? %><% x = 0 %>
     <% @advertisers.each do |advertiser| %>
             <% if advertiser.user == current_user %>
              <% x +=1 %>
+
+
              <% end %><% end %>
 
     <div class = "panel panel-default">
         <div class = "panel-heading">
           <div class = "row">
               <div class = "col-xs-12 col-md-8">
-                <h1>Week's Cases: <%= x %></h1></div>
+                <h1>Month's Cases: <%= x %></h1></div>
 
 
             <div class = "col-xs-12 col-md-4" align="right">
                 
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Change Date Range<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                      <li align = "center"><%= link_to "View Today" , today_path %></li>
-                      <li align = "center"><%= link_to "View Yesterday", yesterday_path %>
-                      <li align = "center"><%= link_to "View This Month" , this_month_path %></li>
+                      <li align = "center"><%= link_to "View Today", today_path %>
+                      <li align = "center"><%= link_to "View Yesterday" , yesterday_path %></li>
+                      <li align = "center"><%= link_to "View This Week" , advertisers_path %></li>
                     </ul>&nbsp;&nbsp;&nbsp;&nbsp;
                     <%= link_to 'New Case', new_advertiser_path, class: "btn btn-default btn-lg" %>
                   </div></div>
@@ -42,7 +39,6 @@
               </tr>
             </thead>
           <tbody>
-    
         <% @advertisers.each do |advertiser| %>
             <% if advertiser.user == current_user %>
               <tr>
@@ -57,17 +53,17 @@
                       </td>
                   <% end %>
                 <td><%= advertiser.cid %></td>
-                <td><%= advertiser.issue %></td>
+                <td><%= advertiser.issue %></td><!-- Modal -->
                 <td>
-                  <% if (advertiser.points < 5) %>
+                  <% if (advertiser.points == 5) %>
                     <span class = "label label-danger">
                       <%= advertiser.points %></span>
                     </td>
-                    <% elsif (advertiser.points < 12) %>
+                    <% elsif (advertiser.points == 12) %>
                     <span class = "label label-warning">
                       <%= advertiser.points %></span>
                     </td>
-                    <% elsif (advertiser.points < 20) %>
+                    <% elsif (advertiser.points == 20) %>
                     <span class = "label label-info">
                       <%= advertiser.points %></span>
                     </td>
@@ -75,8 +71,7 @@
                     <span class = "label label-success">
                       <%= advertiser.points %></span>
                   <% end %>
-                  
-                  <td>
+                 <td>
                     <% if (advertiser.finished == "yes") %>
                       <span class="label label-success">
                         <%= advertiser.finished %> | <span class="glyphicon glyphicon-heart"></span></span>
@@ -86,11 +81,11 @@
                         <%= advertiser.finished %> | <span class="glyphicon glyphicon-cog"></span></span>
                               <% end %>
                               </td>
-                <td class="col-md-1"><%= link_to 'Case Card', advertiser, class: "btn btn-warning" %></td>
+                   
+                <td class="col-md-1"><%= link_to 'Case Card', advertiser, class: "btn btn-warning" %>
                 <td class="col-md-1"><%= link_to 'Delete', advertiser, method: :delete, data: { confirm: 'Are you sure you want to delete this case from your records?' }, class: "btn btn-danger" %></td>
               </tr>
             <% end %>
-
           <% end %>
           </tbody>
         </table>
@@ -100,7 +95,7 @@
           <%= link_to 'New Case', new_advertiser_path, class: "btn btn-success btn-lg" %>
         </div>
       </div>
-  <% else %>
+     <% else %>
   <div class="jumbotron center">
        <h1>Sign in to continue...</h1>
        <p>
@@ -108,8 +103,5 @@
          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
       </p>    
 <% end %>
-
-
-
 
 
