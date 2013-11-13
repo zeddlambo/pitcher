@@ -1,13 +1,28 @@
+<SCRIPT LANGUAGE="JavaScript">
 
+function ClipBoard() 
+{
+holdtext.innerText = copytext.innerText;
+Copied = holdtext.createTextRange();
+Copied.execCommand("RemoveFormat");
+Copied.execCommand("Copy");
+}
+
+</SCRIPT>
 
 <p id="notice"><%= notice %></p>
 <div class = "panel panel-default">
   <div class = "panel-heading">
+    <div class ="row">
+     <div class = "col-xs-12 col-md-9">
     <h1>Case Card for CID: <%= @advertiser.cid %></h1>
+      </div>
+    <div class = "col-xs-12 col-md-3">
+    </div></div>
   </div>
   <div class = "panel-body">
-    <div class = "form-group">
-  <SPAN ID="copytext"> 
+    <div class = "form-group" > 
+  <SPAN ID="copytext">
       <p>
         <strong>Name:</strong>
         <%= @advertiser.name %>
@@ -34,7 +49,10 @@
       </p>
 
       <p>Follow Up Required:</p>
-    </SPAN>
+</SPAN>
+  <TEXTAREA ID="holdtext" STYLE="display:none;">
+    </TEXTAREA>
+    <BUTTON class="btn btn-primary" onClick="ClipBoard();">Copy Phone Note</BUTTON>
   </div></div>
   <div class = "panel-footer">
     <%= link_to 'Edit', edit_advertiser_path(@advertiser) %> |
