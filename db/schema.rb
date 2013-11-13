@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131112231954) do
+ActiveRecord::Schema.define(version: 20131113155458) do
 
   create_table "advertisers", force: true do |t|
     t.string   "name"
     t.string   "security"
     t.integer  "cid"
-    t.string   "issue"
+    t.text     "issue",      limit: 255
     t.integer  "points"
     t.datetime "created_at"
     t.datetime "updated_at"
