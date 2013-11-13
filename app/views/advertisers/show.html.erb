@@ -1,14 +1,14 @@
-<SCRIPT LANGUAGE="JavaScript">
+<script>
+  $(document).ready(function() {
+    var clip = new ZeroClipboard($("#d_clip_button"))
+  });
 
-function ClipBoard() 
-{
-holdtext.innerText = copytext.innerText;
-Copied = holdtext.createTextRange();
-Copied.execCommand("RemoveFormat");
-Copied.execCommand("Copy");
-}
+  $("#clear-test").on("click", function(){
+    $("#fe_text").val("Copy me!");
+    $("#testarea").val("");
+  });
+</script>
 
-</SCRIPT>
 
 <p id="notice"><%= notice %></p>
 <div class = "panel panel-default">
@@ -22,10 +22,10 @@ Copied.execCommand("Copy");
   </div>
   <div class = "panel-body">
     <div class = "form-group" > 
-  <SPAN ID="copytext">
-      <p>
+      <label for='fe_text'>
+        <p>
         <strong>Name:</strong>
-        <%= @advertiser.name %>
+        <%= @advertiser.name%>
       </p>
 
       <p>
@@ -48,16 +48,15 @@ Copied.execCommand("Copy");
         <%= @advertiser.points %>
       </p>
 
-      <p>Follow Up Required:</p>
-</SPAN>
-  <TEXTAREA ID="holdtext" STYLE="display:none;">
-    </TEXTAREA>
-    <BUTTON class="btn btn-primary" onClick="ClipBoard();">Copy Phone Note</BUTTON>
+      <p>Follow Up Required:</p></label>
+    </br><!--<button class='btn btn-primary btn-lg' data-clipboard-target='fe_text' data-clipboard-text='Default clipboard text from attribute' id='d_clip_button' title='Copy Phone Note'>
+    <b>Copy Phone Note</b>
+  </button>-->
   </div></div>
   <div class = "panel-footer">
     <%= link_to 'Edit', edit_advertiser_path(@advertiser) %> |
     <%= link_to 'Back to Cases', advertisers_path %>
   </div></div>
-
   
+
 
