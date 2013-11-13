@@ -6,6 +6,7 @@ class CreateAdvertisers < ActiveRecord::Migration
       t.integer :cid
       t.string :issue
       t.integer :points
+      t.string :finished
       t.timestamps
     end
   end
