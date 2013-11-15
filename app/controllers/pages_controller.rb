@@ -21,4 +21,8 @@ class PagesController < ApplicationController
   	@advertisers = current_user.advertisers.by_month
   end
 
+  def all
+    @advertisers = current_user.advertisers
+  end
+
 end
