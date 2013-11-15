@@ -13,8 +13,8 @@ class PagesController < ApplicationController
   	@advertisers = current_user.advertisers.yesterday
   end
 
-  def today
-  	@advertisers = current_user.advertisers.today
+  def by_week
+  	@advertisers = current_user.advertisers.by_week
   end
 
   def this_month

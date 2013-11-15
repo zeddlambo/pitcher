@@ -10,7 +10,7 @@ Pinteresting::Application.routes.draw do
   get "weekly_progress" => "pages#weekly_progress"
   get "summary" => "summary#index"
   get "yesterday" => "pages#yesterday"
-  get "today" => "pages#today"
+  get "by_week" => "pages#by_week"
   get "this_month" => "pages#this_month"
 
   # The priority is based upon order of creation: first created -> highest priority.
