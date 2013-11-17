@@ -7,22 +7,42 @@ class PagesController < ApplicationController
 
    def weekly_progress
     @advertisers = current_user.advertisers.by_week
+    respond_to do |format|
+      format.html
+      format.csv { send_data @advertisers.to_csv }
+    end
   end
 
   def yesterday
   	@advertisers = current_user.advertisers.yesterday
+    respond_to do |format|
+      format.html
+      format.csv { send_data @advertisers.to_csv }
+    end
   end
 
   def by_week
   	@advertisers = current_user.advertisers.by_week
+    respond_to do |format|
+      format.html
+      format.csv { send_data @advertisers.to_csv }
+    end
   end
 
   def this_month
   	@advertisers = current_user.advertisers.by_month
+    respond_to do |format|
+      format.html
+      format.csv { send_data @advertisers.to_csv }
+    end
   end
 
   def all
     @advertisers = current_user.advertisers
+    respond_to do |format|
+      format.html
+      format.csv { send_data @advertisers.to_csv }
+    end
   end
 
 end

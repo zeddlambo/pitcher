@@ -19,24 +19,15 @@ ActiveRecord::Schema.define(version: 20131113155458) do
     t.integer  "cid"
     t.text     "issue",      limit: 255
     t.integer  "points"
+    t.string   "finished"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "calltime"
-    t.string   "finished"
   end
 
+  add_index "advertisers", ["calltime"], name: "index_advertisers_on_calltime"
   add_index "advertisers", ["user_id"], name: "index_advertisers_on_user_id"
-
-  create_table "cases", force: true do |t|
-    t.string   "name"
-    t.string   "security"
-    t.integer  "cid"
-    t.string   "issue"
-    t.integer  "points"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "notes", force: true do |t|
     t.string   "title"
@@ -48,12 +39,6 @@ ActiveRecord::Schema.define(version: 20131113155458) do
   end
 
   add_index "notes", ["user_id"], name: "index_notes_on_user_id"
-
-  create_table "pins", force: true do |t|
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
