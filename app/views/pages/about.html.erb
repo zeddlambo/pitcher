@@ -3,23 +3,8 @@
 		<h1>Give Feedback</h1>
 	</div>
 	<div class = "panel-body">
-		<div class = "form-group">
-			<p>Pitchzilla is a simple pitch tracking application that makes it easy for you as an Adwords Online specialist to record, track, and analyze your interactions with Advertisers. If you have any feedback please feel free to fill out the form below or send an email to --> <strong><%= link_to "ZAC2013@GMAIL.COM", mailto: "zac@google.com" %></strong></p></br>
-				<FORM METHOD=POST ACTION="mailto:zac@google.com" ENCTYPE="text/plain">
-				<INPUT TYPE="text" NAME="username", class= "form-control", placeholder = "Name" > </br>
-				<INPUT TYPE="text" NAME="email", class= "form-control", placeholder = "Email">
-				<BR>
-				<p align="left">Comments:</p>
-				<TEXTAREA NAME="COMMENTS" ROWS = 5, class = "form-control">
-				</TEXTAREA>
-				<INPUT NAME="redirect" TYPE="hidden" VALUE="../about">
-				<INPUT NAME="NEXT_URL" TYPE="hidden" VALUE="../about">
-				<BR>
-		</div></div>
-		<div class = "panel-footer">
-			<INPUT TYPE="submit" VALUE="Send", class = "btn btn-success btn-lg">
-			<INPUT TYPE="reset" VALUE="Clear", class = "btn btn-default btn-lg">
-			</FORM>
-		</div>
-		<!-- END OF FORM -->
+			<p>Pitchzilla is a simple pitch tracking application that makes it easy for you as an Adwords Online specialist to record, track, and analyze your interactions with Advertisers. If you have any feedback please feel free to fill out the form below or send an email to --> <strong><%= link_to "ZAC2013@GMAIL.COM", mailto: "zac@google.com" %></strong></p>
 </div>
+<div class = "panel-footer">
+	<%= link_to '+ New Case', new_advertiser_path, class: "btn btn-success btn-lg" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Just incase you get a call :)</strong>
+</div></div>
