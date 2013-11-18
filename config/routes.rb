@@ -13,6 +13,7 @@ Pinteresting::Application.routes.draw do
   get "by_week" => "pages#by_week"
   get "this_month" => "pages#this_month"
   get "all" => "pages#all"
+  get "opps" => "pages#opps"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

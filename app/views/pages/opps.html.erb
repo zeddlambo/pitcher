@@ -1,0 +1,92 @@
+  <% if user_signed_in? %><% x = 0 %>
+    <% @advertisers.each do |advertiser| %>
+            <% if advertiser.user == current_user %>
+             <% x +=1 %>
+
+
+             <% end %><% end %>
+
+    <div class = "panel panel-default">
+        <div class = "panel-heading">
+                <h1>Opportunities: <%= x %></h1></div>
+        <div class ="panel-body">
+          <table class="table table-hover">
+            <thead>
+             <tr>
+                <th>Name</th>
+                <th>Security</th>
+                <th>CID</th>
+                <th>Issue</th>
+                <th>Points</th>
+                <th>Finished?</th>
+                <th>View</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+          <tbody>
+        <% @advertisers.each do |advertiser| %>
+            <% if advertiser.user == current_user %>
+              <tr>
+                <td><%= advertiser.name %></td>
+                <td><% if (advertiser.security == "yes") %>
+                      <span class="label label-success">
+                        <%= advertiser.security %></span>
+                      </td>
+                    <% else %>
+                      <span class="label label-danger">
+                        <%= advertiser.security %></span>
+                      </td>
+                  <% end %>
+                <td><%= advertiser.cid %></td>
+                <td><%= advertiser.issue %></td><!-- Modal -->
+                <td>
+                  <% if (advertiser.points < 5) %>
+                    <span class = "label label-danger">
+                      <%= advertiser.points %></span>
+                    </td>
+                    <% elsif (advertiser.points < 12) %>
+                    <span class = "label label-warning">
+                      <%= advertiser.points %></span>
+                    </td>
+                    <% elsif (advertiser.points < 20) %>
+                    <span class = "label label-info">
+                      <%= advertiser.points %></span>
+                    </td>
+                  <% else %>
+                    <span class = "label label-success">
+                      <%= advertiser.points %></span>
+                  <% end %>
+                 <td>
+                    <% if (advertiser.finished == "yes") %>
+                      <span class="label label-success">
+                        <%= advertiser.finished %> | <span class="glyphicon glyphicon-heart"></span></span>
+                      </td>
+                    <% else %>
+                      <span class="label label-danger" data-toggle="modal" data-target="#myModal">
+                        <%= advertiser.finished %> | <span class="glyphicon glyphicon-fire"></span></span>
+                              <% end %>
+                              </td>
+                   
+                <td class="col-md-1"><%= link_to 'Case Card', advertiser, class: "btn btn-warning" %>
+                <td class="col-md-1"><%= link_to 'Delete', advertiser, method: :delete, data: { confirm: 'Are you sure you want to delete this case from your records?' }, class: "btn btn-danger" %></td>
+              </tr>
+            <% end %>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+        </br>
+        <div class= "panel-footer">
+          <%= link_to 'New Case', new_advertiser_path, class: "btn btn-success btn-lg" %>
+        </div>
+      </div>
+     <% else %>
+  <div class="jumbotron center">
+       <h1>Sign in to continue...</h1>
+       <p>
+         <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+      </p>    
+<% end %>
+
+
