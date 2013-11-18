@@ -46,7 +46,7 @@ class PagesController < ApplicationController
   end
 
   def opps
-    @advertisers = current_user.advertisers.find_by points: 0
+    @advertisers = current_user.advertisers.find_by(points: params[0])
   end
 
 end
