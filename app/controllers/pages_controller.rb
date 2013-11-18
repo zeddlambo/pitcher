@@ -46,7 +46,7 @@ class PagesController < ApplicationController
   end
 
   def opps
-    @advertisers = current_user.advertisers.where(:points < 1)
+    @advertisers = current_user.advertisers.where(:points = 0)
   end
 
 end
