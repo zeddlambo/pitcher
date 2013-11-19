@@ -19,6 +19,9 @@
 	  <div class="panel-footer"><%= f.submit "Sign up", root: "advertisers#index", class: "btn btn-primary btn-lg" %>
 	<% end %></br>
 	<%= render "devise/shared/links" %>
+	mixpanel.people.set({
+    "$email":<% :email %>
+});
 </div>
 	</div>
 </div>
