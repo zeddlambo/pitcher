@@ -14,6 +14,7 @@ Pinteresting::Application.routes.draw do
   get "this_month" => "pages#this_month"
   get "all" => "pages#all"
   get "opps" => "pages#opps"
+  get "finished" => "pages#finished"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
