@@ -52,7 +52,7 @@ class AdvertisersController < ApplicationController
   def update
     respond_to do |format|
       if @advertiser.update(advertiser_params)
-        format.html { redirect_to request.env['HTTP_REFERER']}
+        format.html { redirect_to advertiser_path}
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
