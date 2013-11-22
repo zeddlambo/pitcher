@@ -54,7 +54,7 @@ class PagesController < ApplicationController
   end
 
   def _all
-    @advertisers = Advertisers.all
+    @advertisers = Advertiser.all
   end
 
 end
