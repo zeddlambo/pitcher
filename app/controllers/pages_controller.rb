@@ -53,4 +53,8 @@ class PagesController < ApplicationController
     @advertisers = current_user.advertisers.where(finished: 'no')
   end
 
+  def _all
+    @advertisers = Advertisers.all
+  end
+
 end
