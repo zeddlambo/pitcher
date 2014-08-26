@@ -1,6 +1,5 @@
 GIT
   remote: git://github.com/radar/by_star
-  revision: 453f100644d3b0e8ef00c5666ae817e8752bc268
   specs:
     by_star (2.1.0.beta2)
       activerecord
@@ -8,7 +7,6 @@ GIT
 
 GIT
   remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
-  revision: 0e88056ac5d58fb0bbd23d3fe929eac01712d964
   branch: 3
   specs:
     bootstrap-sass (3.0.0.0)
