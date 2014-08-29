@@ -1,3 +1,9 @@
+<script type="text/javascript">
+    mixpanel.track_links("btn btn-warning btn-lg", "Update Case", {
+        "referrer": document.referrer
+    });
+</script>
+
 <%= form_for(@advertiser) do |f| %>
   <% if @advertiser.errors.any? %>
     <div id="error_explanation">

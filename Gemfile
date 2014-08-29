@@ -12,6 +12,8 @@ gem 'sass-rails', '>= 3.2'
 gem 'devise', '~> 3.1.0.rc2'
 gem 'by_star', :git => "git://github.com/radar/by_star"
 gem 'zeroclipboard-rails'
+gem 'autoprefixer-rails'
+gem 'mixpanel-ruby'
 
 group :production do
 	gem 'pg'
