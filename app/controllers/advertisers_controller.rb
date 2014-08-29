@@ -40,6 +40,7 @@ class AdvertisersController < ApplicationController
       if @advertiser.save
         format.html { redirect_to @advertiser }
         format.json { render action: 'show', status: :created, location: @advertiser }
+        mixpanel_track( ‘Signup’, {mp_note: ‘signed up’} )
       else
         format.html { render action: 'new' }
         format.json { render json: @advertiser.errors, status: :unprocessable_entity }
