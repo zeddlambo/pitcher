@@ -41,7 +41,7 @@ class AdvertisersController < ApplicationController
       if @advertiser.save
         format.html { redirect_to @advertiser }
         format.json { render action: 'show', status: :created, location: @advertiser }
-        track_event("New Case", case increse: "1")
+        track_event "Sign up"
       else
         format.html { render action: 'new' }
         format.json { render json: @advertiser.errors, status: :unprocessable_entity }
