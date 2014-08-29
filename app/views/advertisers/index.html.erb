@@ -35,8 +35,7 @@
                 <th>Name</th>
                 <th>Security</th>
                 <th>CID</th>
-                <th>Issue</th>
-                <th>Points</th>
+                <th>Case Description</th>
                 <th>Finished?</th>
                 <th>View</th>
                 <th>Delete</th>
@@ -48,7 +47,7 @@
               <tr>
                 <td><%= advertiser.name %></td>
                 <td><% if (advertiser.security == "yes") %>
-                      <span class="label label-success">
+                      <span class="label label-info">
                         <%= advertiser.security %></span>
                       </td>
                     <% else %>
