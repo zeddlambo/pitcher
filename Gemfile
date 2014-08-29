@@ -10,7 +10,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sass-rails', '>= 3.2'
 gem 'devise', '~> 3.1.0.rc2'
-#gem 'by_star', :git => "git://github.com/radar/by_star"
+gem 'by_star', :git => "git://github.com/radar/by_star"
 gem 'zeroclipboard-rails'
 
 group :production do

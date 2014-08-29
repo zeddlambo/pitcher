@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/radar/by_star
+  revision: d972c500b235196e6c512ce24440bd5857839bf5
+  specs:
+    by_star (2.2.1)
+      activesupport
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -129,6 +136,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
+  by_star!
   coffee-rails (~> 4.0.0)
   devise (~> 3.1.0.rc2)
   jbuilder (~> 1.2)
