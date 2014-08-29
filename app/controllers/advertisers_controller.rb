@@ -24,7 +24,7 @@ class AdvertisersController < ApplicationController
   # GET /advertisers/new
   def new
     @advertiser = current_user.advertisers.build
-    mixpanel.track("New Advertiser");
+    
   end
 
 
@@ -41,7 +41,7 @@ class AdvertisersController < ApplicationController
       if @advertiser.save
         format.html { redirect_to @advertiser }
         format.json { render action: 'show', status: :created, location: @advertiser }
-        mixpanel.track("New Case");
+        
       else
         format.html { render action: 'new' }
         format.json { render json: @advertiser.errors, status: :unprocessable_entity }
@@ -56,7 +56,7 @@ class AdvertisersController < ApplicationController
       if @advertiser.update(advertiser_params)
         format.html { redirect_to advertiser_path}
         format.json { head :no_content }
-        mixpanel.track("Edit Case");
+        
       else
         format.html { render action: 'edit' }
         format.json { render json: @advertiser.errors, status: :unprocessable_entity }
@@ -71,7 +71,7 @@ class AdvertisersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to advertisers_url }
       format.json { head :no_content }
-      mixpanel.track("Delete Case");
+      
     end
   end
 
