@@ -38,7 +38,17 @@
   </div></div>
 </div>
   <div class="textarea">
-        <%= f.text_area :issue, class: "form-control",rows:6, placeholder: "User Issues..." %><br></div>
+        <%= f.text_area :issue, class: "form-control",rows:6, placeholder: "1. Describe the root cause of the issue (diagnostic)? Be very specific about the UI element / feature (“AdWords Billing” is too generic)*
+PLEASE DO NOT ENTER PERSONAL INFORMATION (go/whatispii)
+
+</br></br>
+
+
+2. How did you resolve the query?*
+</br></br>
+
+
+3. Other comments(Optional)" %><br></div>
   <div class="actions">
     <%= f.submit "Update Case", class: "btn btn-warning btn-lg" %>
   </div>
